@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class DatosPersonales
+
+abstract class Facultad {
+- profesores: List<Profesor>
+- alumnos: List<Alumno>
+- materias: List<Materia>
++ addMateria(materia: Materia)
++ addCorrelativa(materia: Materia, correlativa: Materia)
++ addAlumno(alumno: Alumno)
++ addProfesor(profesor: Profesor)
++ addMateriaProfesor(profesor: Profesor, materia: Materia)
++ addMateriaAlumno(alumno: Alumno, materia: Materia)
++ materiasDeProfesor(profesor: Profesor) : List<Profesor>
++ cantidadAlumnosMateria(materia: Materia): int
++ cantidadAlumnosPorMateria(): Map<Materia, Integer>
+}
+
+
+@enduml
