@@ -1,9 +1,9 @@
 package models;
 
 import exceptions.ArticuloRepetidoException;
+import exceptions.ClienteNuloException;
 import exceptions.StockInsuficienteException;
 
-import javax.swing.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,15 +11,15 @@ import java.util.Objects;
 
 public class Factura {
     //Inner-Class
-    public class ItemFactura {
+    private class ItemFactura {
         private Articulo articulo;
         private int cantidad;
         private double precio;
 
-        public ItemFactura(Articulo articulo, int cantidad, double precio) {
+        public ItemFactura(Articulo articulo, int cantidad) {
             this.articulo = articulo;
             this.cantidad = cantidad;
-            this.precio = precio;
+            this.precio = articulo.getPrecio();
         }
 
         public Articulo getArticulo() {
@@ -39,29 +39,26 @@ public class Factura {
     private int numeroFactura;
     private LocalDate fecha;
     private List<ItemFactura> itemFacturas;
-    private boolean cuentaCorriente;
     private Cliente cliente;
+    private boolean ctaCte;
+
+    public Factura(int numeroFactura, LocalDate fecha, Cliente cliente, Articulo articulo, int cantidad, boolean ctaCte) throws ClienteNuloException {
+        this.numeroFactura = numeroFactura;
+        this.fecha = fecha;
+        this.itemFacturas = new ArrayList<>();
+        this.agregarItem(articulo, cantidad);
+        if (ctaCte && cliente == null) {
+            throw new ClienteNuloException();
+        }
+        this.cliente = cliente;
+        this.ctaCte = ctaCte;
+    }
 
     public Factura(int numeroFactura, LocalDate fecha, Articulo articulo, int cantidad) {
-        this.numeroFactura = numeroFactura;
-        this.fecha = fecha;
-        this.itemFacturas = new ArrayList<>();
-        itemFacturas.add(new ItemFactura(articulo, cantidad, articulo.getPrecio()));
-        this.cuentaCorriente = false;
-        this.cliente = null;
+        this(numeroFactura, fecha, null, articulo, cantidad, false);
     }
 
-    public Factura(int numeroFactura, LocalDate fecha, Articulo articulo, int cantidad, boolean cuentaCorriente, Cliente cliente) {
-        this.numeroFactura = numeroFactura;
-        this.fecha = fecha;
-        this.itemFacturas = new ArrayList<>();
-        itemFacturas.add(new ItemFactura(articulo, cantidad, articulo.getPrecio()));
-        this.cuentaCorriente = cuentaCorriente;
-        this.cliente = cliente;
-    }
-
-
-    public void agregarItemFactura(Articulo articulo, int cantidad, double precio) throws ArticuloRepetidoException, StockInsuficienteException {
+    public void agregarItem(Articulo articulo, int cantidad) throws ArticuloRepetidoException, StockInsuficienteException {
         if (articulo.getCantidad() < cantidad) {
             throw new StockInsuficienteException();
         }
@@ -70,7 +67,7 @@ public class Factura {
                 throw new ArticuloRepetidoException();
             }
         }
-        itemFacturas.add(new ItemFactura(articulo, cantidad, precio));
+        itemFacturas.add(new ItemFactura(articulo, cantidad));
         articulo.setCantidad(articulo.getCantidad() - cantidad);
     }
 
@@ -86,6 +83,14 @@ public class Factura {
         return itemFacturas;
     }
 
+    public boolean isCtaCte() {
+        return ctaCte;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -98,18 +103,11 @@ public class Factura {
         return Objects.hashCode(numeroFactura);
     }
 
-    @Override
-    public String toString() {
-        String s = "Factura{" +
-                "numeroFactura=" + numeroFactura +
-                ", fecha=" + fecha +
-                ", itemFacturas=" + itemFacturas +
-                ", cuentaCorriente=" + cuentaCorriente;
-        if (cliente != null) {
-            s += ", cliente=" + cliente;
+    public double importeTotal() {
+        double total = 0;
+        for (ItemFactura item : itemFacturas) {
+            total += item.getPrecio() * item.getCantidad();
         }
-        s += '}';
-        return s;
-
+        return total;
     }
 }

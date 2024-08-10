@@ -6,11 +6,11 @@ import java.util.List;
 
 public class Negocio {
     private String nombre;
-    private int CUIL;
+    private String CUIL;
     private List<Articulo> articulos;
     private List<Factura> facturas;
 
-    public Negocio(String nombre, int CUIL) {
+    public Negocio(String CUIL, String nombre) {
         this.nombre = nombre;
         this.CUIL = CUIL;
         this.articulos = new ArrayList<>();
@@ -21,7 +21,7 @@ public class Negocio {
         return nombre;
     }
 
-    public int getCUIL() {
+    public String getCUIL() {
         return CUIL;
     }
 
@@ -33,12 +33,16 @@ public class Negocio {
         return facturas;
     }
 
-    public void agregarFactura(int numeroFactura, LocalDate fecha, Articulo articulo, int cantidad) {
-        facturas.add(new Factura(numeroFactura, fecha, articulo, cantidad));
+    public Factura agregarFactura(int numeroFactura, LocalDate fecha, Articulo articulo, int cantidad) {
+        Factura factura = new Factura(numeroFactura, fecha, articulo, cantidad);
+        facturas.add(factura);
+        return factura;
     }
 
-    public void agregarArticulo(int codigo, double precio, String descripcion, int cantidad) {
-        articulos.add(new Articulo(codigo, precio, descripcion, cantidad));
+    public Articulo agregarArticulo(int codigo, String descripcion, double precio, int cantidad) {
+        Articulo articulo = new Articulo(codigo, descripcion, precio, cantidad);
+        articulos.add(articulo);
+        return articulo;
     }
 
     /**

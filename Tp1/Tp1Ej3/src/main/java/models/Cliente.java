@@ -4,15 +4,21 @@ import java.util.Objects;
 
 public class Cliente {
     private int codigo;
-    private int CUIT;
-    private int telefono;
+    private String nombre;
+    private String CUIT;
+    private String telefono;
     private String direccion;
 
-    public Cliente(int codigo, int CUIT, int telefono, String direccion) {
+    public Cliente(int codigo, String nombre, String CUIT, String telefono, String direccion) {
         this.codigo = codigo;
+        this.nombre = nombre;
         this.CUIT = CUIT;
         this.telefono = telefono;
         this.direccion = direccion;
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 
     public int getCodigo() {
@@ -23,20 +29,12 @@ public class Cliente {
         this.codigo = codigo;
     }
 
-    public int getCUIT() {
+    public String getCUIT() {
         return CUIT;
     }
 
-    public void setCUIT(int CUIT) {
-        this.CUIT = CUIT;
-    }
-
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
-    }
-
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
     }
 
     public String getDireccion() {

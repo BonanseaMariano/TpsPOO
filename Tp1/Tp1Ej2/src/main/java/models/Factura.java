@@ -2,6 +2,7 @@ package models;
 
 import exceptions.ArticuloRepetidoException;
 import exceptions.StockInsuficienteException;
+import jdk.jshell.spi.SPIResolutionException;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -15,14 +16,22 @@ public class Factura {
         private int cantidad;
         private double precio;
 
-        public ItemFactura(Articulo articulo, int cantidad, double precio) {
+        public ItemFactura(Articulo articulo, int cantidad) {
             this.articulo = articulo;
             this.cantidad = cantidad;
-            this.precio = precio;
+            this.precio = articulo.getPrecio();
         }
 
         public Articulo getArticulo() {
             return articulo;
+        }
+
+        public int getCantidad() {
+            return cantidad;
+        }
+
+        public double getPrecio() {
+            return precio;
         }
     }
 
@@ -35,10 +44,10 @@ public class Factura {
         this.numeroFactura = numeroFactura;
         this.fecha = fecha;
         this.itemFacturas = new ArrayList<>();
-        itemFacturas.add(new ItemFactura(articulo, cantidad, articulo.getPrecio()));
+        itemFacturas.add(new ItemFactura(articulo, cantidad));
     }
 
-    public void agregarItemFactura(Articulo articulo, int cantidad, double precio) throws ArticuloRepetidoException, StockInsuficienteException {
+    public void agregarItem(Articulo articulo, int cantidad) throws ArticuloRepetidoException, StockInsuficienteException {
         if (articulo.getCantidad() < cantidad) {
             throw new StockInsuficienteException();
         }
@@ -47,7 +56,7 @@ public class Factura {
                 throw new ArticuloRepetidoException();
             }
         }
-        itemFacturas.add(new ItemFactura(articulo, cantidad, precio));
+        itemFacturas.add(new ItemFactura(articulo, cantidad));
         articulo.setCantidad(articulo.getCantidad() - cantidad);
     }
 
@@ -75,4 +84,11 @@ public class Factura {
         return Objects.hashCode(numeroFactura);
     }
 
+    public double importeTotal() {
+        double total = 0;
+        for (ItemFactura item : itemFacturas) {
+            total += item.getPrecio() * item.getCantidad();
+        }
+        return total;
+    }
 }

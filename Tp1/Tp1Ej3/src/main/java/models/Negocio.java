@@ -3,35 +3,28 @@ package models;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Negocio {
     private String nombre;
-    private int CUIL;
+    private String CUIL;
     private List<Articulo> articulos;
     private List<Factura> facturas;
+    private List<Cliente> clientes;
 
-    public Negocio(String nombre, int CUIL) {
+    public Negocio(String CUIL, String nombre) {
         this.nombre = nombre;
         this.CUIL = CUIL;
         this.articulos = new ArrayList<>();
         this.facturas = new ArrayList<>();
+        this.clientes = new ArrayList<>();
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getCUIL() {
+    public String getCUIL() {
         return CUIL;
-    }
-
-    public void setCUIL(int CUIL) {
-        this.CUIL = CUIL;
     }
 
     public List<Articulo> getArticulos() {
@@ -42,34 +35,27 @@ public class Negocio {
         return facturas;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Negocio negocio)) return false;
-        return CUIL == negocio.CUIL;
+    public Factura agregarFactura(int numeroFactura, LocalDate fecha, Cliente cliente, Articulo articulo, int cantidad, boolean ctaCte) {
+        Factura factura = new Factura(numeroFactura, fecha, cliente, articulo, cantidad, ctaCte);
+        facturas.add(factura);
+        return factura;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(CUIL);
+    public Factura agregarFactura(int numeroFactura, LocalDate fecha, Articulo articulo, int cantidad) {
+        Factura factura = new Factura(numeroFactura, fecha, articulo, cantidad);
+        facturas.add(factura);
+        return factura;
     }
 
-    @Override
-    public String toString() {
-        return "Negocio{" +
-                "nombre='" + nombre + '\'' +
-                ", CUIL=" + CUIL +
-                ", articulos=" + articulos +
-                ", facturas=" + facturas +
-                '}';
+    public Articulo agregarArticulo(int codigo, String descripcion, double precio, int cantidad) {
+        Articulo articulo = new Articulo(codigo, descripcion, precio, cantidad);
+        articulos.add(articulo);
+        return articulo;
     }
 
-    public void agregarFactura(int numeroFactura, LocalDate fecha, Articulo articulo, int cantidad) {
-        facturas.add(new Factura(numeroFactura, fecha, articulo, cantidad));
-    }
-
-    public void agregarArticulo(int codigo, double precio, String descripcion, int cantidad) {
-        articulos.add(new Articulo(codigo, precio, descripcion, cantidad));
+    public Cliente agregarCliente(int codigo, String nombre, String CUIT, String telefono, String direccion) {
+        Cliente cliente = new Cliente(codigo, nombre, CUIT, telefono, direccion);
+        return cliente;
     }
 
     /**
@@ -80,7 +66,7 @@ public class Negocio {
     public void cambiarPrecio(double porcCambio) {
         for (Articulo articulo : articulos) {
             double precio = articulo.getPrecio();
-            articulo.setPrecio(precio + (precio * porcCambio));
+            articulo.setPrecio(precio + ((precio * porcCambio) / 100));
         }
     }
 
@@ -98,23 +84,43 @@ public class Negocio {
         return valorStock;
     }
 
-    public void totalEntreFechas(LocalDate fecha1, LocalDate fecha2) {
+    public double totalFacturado(LocalDate f1, LocalDate f2) {
         double total = 0;
         for (Factura factura : facturas) {
-            if (factura.getFecha().isAfter(fecha1) && factura.getFecha().isBefore(fecha2)) {
-                for (Factura.ItemFactura item : factura.getItemFacturas()) {
-                    total += item.getArticulo().getPrecio() * item.getCantidad();
-                }
+            if ((factura.getFecha().isAfter(f1) || factura.getFecha().isEqual(f1)) && (factura.getFecha().isBefore(f2)) || (factura.getFecha().isEqual(f2))) {
+                total += factura.importeTotal();
             }
         }
+        return total;
     }
 
-    public void totalEntreFechas(LocalDate fecha1, LocalDate fecha2, Cliente cliente) {
+    public double totalFacturadoCtaCte(LocalDate f1, LocalDate f2) {
+        double total = 0;
         for (Factura factura : facturas) {
-            if (factura.getFecha().isAfter(fecha1) && factura.getFecha().isBefore(fecha2)) {
+            if (factura.isCtaCte() && (factura.getFecha().isAfter(f1) || factura.getFecha().isEqual(f1)) && (factura.getFecha().isBefore(f2)) || (factura.getFecha().isEqual(f2))) {
+                total += factura.importeTotal();
             }
         }
+        return total;
     }
 
+    public double totalFacturadoCliente(LocalDate f1, LocalDate f2, Cliente cliente) {
+        double total = 0;
+        for (Factura factura : facturas) {
+            if (factura.getCliente() != null && factura.getCliente().equals(cliente) && (factura.getFecha().isAfter(f1) || factura.getFecha().isEqual(f1)) && (factura.getFecha().isBefore(f2)) || (factura.getFecha().isEqual(f2))) {
+                total += factura.importeTotal();
+            }
+        }
+        return total;
+    }
 
+    public double totalFacturadoClienteCtaCte(LocalDate localDate, LocalDate localDate2, Cliente cliente) {
+        double total = 0;
+        for (Factura factura : facturas) {
+            if (factura.isCtaCte() && factura.getCliente().equals(cliente) && factura.getFecha().isAfter(localDate) && factura.getFecha().isBefore(localDate2)) {
+                total += factura.importeTotal();
+            }
+        }
+        return total;
+    }
 }

@@ -1,9 +1,14 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-abstract class DatosPersonales
+abstract class DatosPersonales {
+- calle: String
+- ciudad: String
+- telefono: int
+- email: String
+}
 
-abstract class Facultad {
+class Facultad {
 - profesores: List<Profesor>
 - alumnos: List<Alumno>
 - materias: List<Materia>
@@ -18,5 +23,25 @@ abstract class Facultad {
 + cantidadAlumnosPorMateria(): Map<Materia, Integer>
 }
 
+class Alumno {
+- legajo: int
+- nombre: String
+- apellido: String
+- materias: List<Materia>
+# addMateria(materia: Materia)
+}
+
+class Profesor{
+- legajo: int
+- nombre: String
+- apellido: String
+- materias: List<Materia>
+# addMateria(materia: Materia)
+}
+
+DatosPersonales <-- Alumno
+DatosPersonales <-- Profesor
+Facultad --> Alumno
+Facultad -> Profesor
 
 @enduml
