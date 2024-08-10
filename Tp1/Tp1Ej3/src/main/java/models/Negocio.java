@@ -19,22 +19,6 @@ public class Negocio {
         this.clientes = new ArrayList<>();
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getCUIL() {
-        return CUIL;
-    }
-
-    public List<Articulo> getArticulos() {
-        return articulos;
-    }
-
-    public List<Factura> getFacturas() {
-        return facturas;
-    }
-
     public Factura agregarFactura(int numeroFactura, LocalDate fecha, Cliente cliente, Articulo articulo, int cantidad, boolean ctaCte) {
         Factura factura = new Factura(numeroFactura, fecha, cliente, articulo, cantidad, ctaCte);
         facturas.add(factura);
@@ -114,10 +98,10 @@ public class Negocio {
         return total;
     }
 
-    public double totalFacturadoClienteCtaCte(LocalDate localDate, LocalDate localDate2, Cliente cliente) {
+    public double totalFacturadoClienteCtaCte(LocalDate f1, LocalDate f2, Cliente cliente) {
         double total = 0;
         for (Factura factura : facturas) {
-            if (factura.isCtaCte() && factura.getCliente().equals(cliente) && factura.getFecha().isAfter(localDate) && factura.getFecha().isBefore(localDate2)) {
+            if (factura.isCtaCte() && factura.getCliente().equals(cliente) && factura.getFecha().isAfter(f1) && factura.getFecha().isBefore(f2)) {
                 total += factura.importeTotal();
             }
         }

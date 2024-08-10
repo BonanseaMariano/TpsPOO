@@ -1,5 +1,7 @@
 package models;
 
+import exceptions.MateriaRepetidaException;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -15,16 +17,8 @@ public class Materia {
         this.correlativas = new ArrayList<>();
     }
 
-    public List<Materia> getCorrelativas() {
-        return correlativas;
-    }
-
     public int getCodigo() {
         return codigo;
-    }
-
-    public String getNombre() {
-        return nombre;
     }
 
     @Override
@@ -47,7 +41,10 @@ public class Materia {
                 '}';
     }
 
-    protected void addCorrelativa(Materia correlativa) {
-        this.correlativas.add(correlativa);
+    public void agregarCorrelativa(Materia materia) throws MateriaRepetidaException {
+        if (correlativas.contains(materia)) {
+            throw new MateriaRepetidaException();
+        }
+        this.correlativas.add(materia);
     }
 }

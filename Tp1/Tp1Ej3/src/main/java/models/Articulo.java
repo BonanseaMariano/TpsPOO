@@ -15,20 +15,12 @@ public class Articulo {
         this.cantidad = cantidad;
     }
 
-    public int getCodigo() {
-        return codigo;
-    }
-
     public double getPrecio() {
         return precio;
     }
 
     public void setPrecio(double precio) {
         this.precio = precio;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
     }
 
     public int getCantidad() {

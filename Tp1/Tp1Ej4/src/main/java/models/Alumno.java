@@ -1,7 +1,10 @@
 package models;
 
+import exceptions.MateriaRepetidaException;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Alumno {
     private int legajo;
@@ -16,20 +19,16 @@ public class Alumno {
         this.materias = new ArrayList<>();
     }
 
-    public int getLegajo() {
-        return legajo;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Alumno alumno)) return false;
+        return legajo == alumno.legajo;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public List<Materia> getMaterias() {
-        return materias;
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(legajo);
     }
 
     @Override
@@ -44,7 +43,10 @@ public class Alumno {
         return mensaje + "}";
     }
 
-    protected void addMateria(Materia materia) {
+    public void agregarMateria(Materia materia) throws MateriaRepetidaException {
+        if (materias.contains(materia)) {
+            throw new MateriaRepetidaException();
+        }
         this.materias.add(materia);
     }
 }

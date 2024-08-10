@@ -1,7 +1,10 @@
 package models;
 
+import exceptions.MateriaRepetidaException;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Alumno extends DatosPersonal {
     private int legajo;
@@ -9,7 +12,7 @@ public class Alumno extends DatosPersonal {
     private String apellido;
     private List<Materia> materias;
 
-    public Alumno(String calle, String ciudad, int telefono, String email, int legajo, String nombre, String apellido) {
+    public Alumno(int legajo, String nombre, String apellido, String calle, String ciudad, String telefono, String email) {
         super(calle, ciudad, telefono, email);
         this.legajo = legajo;
         this.nombre = nombre;
@@ -17,20 +20,20 @@ public class Alumno extends DatosPersonal {
         this.materias = new ArrayList<>();
     }
 
-    public int getLegajo() {
-        return legajo;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
     public List<Materia> getMaterias() {
         return materias;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Alumno alumno)) return false;
+        return legajo == alumno.legajo;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(legajo);
     }
 
     @Override
@@ -42,10 +45,13 @@ public class Alumno extends DatosPersonal {
         for (Materia m : this.materias) {
             mensaje += ", materia=" + m.getCodigo();
         }
-        return mensaje + ", " + super.toString() + "}";
+        return mensaje + "}";
     }
 
-    protected void addMateria(Materia materia) {
+    public void agregarMateria(Materia materia) throws MateriaRepetidaException {
+        if (materias.contains(materia)) {
+            throw new MateriaRepetidaException();
+        }
         this.materias.add(materia);
     }
 }

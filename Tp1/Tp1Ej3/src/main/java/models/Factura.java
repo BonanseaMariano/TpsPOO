@@ -22,16 +22,26 @@ public class Factura {
             this.precio = articulo.getPrecio();
         }
 
-        public Articulo getArticulo() {
-            return articulo;
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof ItemFactura that)) return false;
+            return Objects.equals(articulo, that.articulo);
         }
 
-        public int getCantidad() {
-            return cantidad;
+        @Override
+        public int hashCode() {
+            return Objects.hashCode(articulo);
         }
 
-        public double getPrecio() {
-            return precio;
+        @Override
+        public String toString() {
+            return "ItemFactura{" +
+                    "articulo=" + articulo +
+                    ", cantidad=" + cantidad +
+                    ", precio=" + precio +
+                    '}';
         }
     }
 
@@ -63,7 +73,7 @@ public class Factura {
             throw new StockInsuficienteException();
         }
         for (ItemFactura item : itemFacturas) {
-            if (item.getArticulo().equals(articulo)) {
+            if (item.articulo.equals(articulo)) {
                 throw new ArticuloRepetidoException();
             }
         }
@@ -71,16 +81,8 @@ public class Factura {
         articulo.setCantidad(articulo.getCantidad() - cantidad);
     }
 
-    public int getNumeroFactura() {
-        return numeroFactura;
-    }
-
     public LocalDate getFecha() {
         return fecha;
-    }
-
-    public List<ItemFactura> getItemFacturas() {
-        return itemFacturas;
     }
 
     public boolean isCtaCte() {
@@ -103,10 +105,21 @@ public class Factura {
         return Objects.hashCode(numeroFactura);
     }
 
+    @Override
+    public String toString() {
+        return "Factura{" +
+                "numeroFactura=" + numeroFactura +
+                ", fecha=" + fecha +
+                ", itemFacturas=" + itemFacturas +
+                ", cliente=" + cliente +
+                ", ctaCte=" + ctaCte +
+                '}';
+    }
+
     public double importeTotal() {
         double total = 0;
         for (ItemFactura item : itemFacturas) {
-            total += item.getPrecio() * item.getCantidad();
+            total += item.precio * item.cantidad;
         }
         return total;
     }

@@ -15,10 +15,6 @@ public class Materia {
         return codigo;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

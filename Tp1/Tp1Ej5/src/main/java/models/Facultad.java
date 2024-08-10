@@ -1,31 +1,25 @@
 package models;
 
+import exceptions.AlumnoRepetidoException;
+import exceptions.MateriaRepetidaException;
+import exceptions.ProfesorRepetidoException;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Facultad {
+    private String nombre;
+    private String ubicacion;
     private List<Profesor> profesores;
     private List<Alumno> alumnos;
     private List<Materia> materias;
 
-    public Facultad() {
+    public Facultad(String nombre, String ubicacion) {
+        this.nombre = nombre;
+        this.ubicacion = ubicacion;
         this.profesores = new ArrayList<>();
         this.alumnos = new ArrayList<>();
         this.materias = new ArrayList<>();
-    }
-
-    public List<Profesor> getProfesores() {
-        return profesores;
-    }
-
-    public List<Alumno> getAlumnos() {
-        return alumnos;
-    }
-
-    public List<Materia> getMaterias() {
-        return materias;
     }
 
     @Override
@@ -45,47 +39,40 @@ public class Facultad {
         return mensaje;
     }
 
-    public void addMateria(Materia materia) {
+    public Materia agregarMateria(int codigo, String nombre) throws MateriaRepetidaException {
+        Materia materia = new Materia(codigo, nombre);
+        if (materias.contains(materia)) {
+            throw new MateriaRepetidaException();
+        }
         this.materias.add(materia);
+        return materia;
     }
 
-    public void AddCorrelativa(Materia materia, Materia correlativa) {
-        for (Materia m : this.materias) {
-            if (m.equals(materia)) {
-                m.addCorrelativa(correlativa);
-                return;
-            }
+    public Alumno agregarAlumno(int legajo, String nombre, String apellido, String calle, String ciudad, String telefono, String email) throws AlumnoRepetidoException {
+        Alumno alumno = new Alumno(legajo, nombre, apellido, calle, ciudad, telefono, email);
+        if (alumnos.contains(alumno)) {
+            throw new AlumnoRepetidoException();
         }
-    }
-
-    public void addAlumno(Alumno alumno) {
         this.alumnos.add(alumno);
+        return alumno;
     }
 
-    public void addProfesor(Profesor profesor) {
+    public Profesor agregarProfesor(int legajo, String nombre, String apellido, Materia materia, String calle, String ciudad, String telefono, String email) throws ProfesorRepetidoException {
+        Profesor profesor = new Profesor(legajo, nombre, apellido, materia, calle, ciudad, telefono, email);
+        if (profesores.contains(profesor)) {
+            throw new ProfesorRepetidoException();
+        }
         this.profesores.add(profesor);
+        return profesor;
     }
 
-    public void addMateriaProfesor(Profesor profesor, Materia materia) {
-        for (Profesor p : this.profesores) {
-            if (p.equals(profesor)) {
-                p.addMateria(materia);
-                return;
-            }
-        }
-    }
-
-    public void addMateriaAlumno(Alumno alumno, Materia materia) {
-        for (Alumno a : this.alumnos) {
-            if (a.equals(alumno)) {
-                a.addMateria(materia);
-                return;
-            }
-        }
-    }
-
-    public List<Materia> materiasDeProfesor(Profesor profesor) {
-
+    /**
+     * Devuelve una lista de materias asociadas al profesor dado.
+     *
+     * @param profesor el profesor para el cual se recuperan las materias
+     * @return una lista de materias asociadas al profesor, o null si el profesor no se encuentra
+     */
+    public List<Materia> materiasPorProfesor(Profesor profesor) {
         for (Profesor p : this.profesores) {
             if (p.equals(profesor)) {
                 return p.getMaterias();
@@ -94,22 +81,29 @@ public class Facultad {
         return null;
     }
 
-    public int cantidadAlumnosMateria(Materia materia) {
-        int cant = 0;
+    /**
+     * Devuelve una lista de alumnos matriculados en una materia específica.
+     *
+     * @param materia La materia de la que se recuperan los alumnos
+     * @return Una lista de alumnos matriculados en la materia especificada
+     */
+    public List<Alumno> alumnosPorMateria(Materia materia) {
+        List<Alumno> alumnos = new ArrayList<>();
         for (Alumno a : this.alumnos) {
             if (a.getMaterias().contains(materia)) {
-                cant++;
+                alumnos.add(a);
             }
         }
-        return cant;
+        return alumnos;
     }
 
-    public Map<Materia, Integer> cantidadAlumnosPorMateria() {
-        Map<Materia, Integer> map = new HashMap<>();
-        for (Materia m : this.materias) {
-            map.put(m, this.cantidadAlumnosMateria(m));
-        }
-        return map;
+    /**
+     * Devuelve la cantidad total de alumnos matriculados en una materia determinada.
+     *
+     * @param materia la materia para la cual se cuenta la cantidad de alumnos
+     * @return la cantidad total de alumnos matriculados en la materia
+     */
+    public int cantidadAlumnosPorMateria(Materia materia) {
+        return alumnosPorMateria(materia).size();
     }
-
 }
