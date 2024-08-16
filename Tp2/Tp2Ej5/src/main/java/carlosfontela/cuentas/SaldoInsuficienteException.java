@@ -1,7 +1,7 @@
 package carlosfontela.cuentas;
 
-public class SaldoInsuficienteException extends Exception {
-    public SaldoInsuficienteException() {
-        super("Saldo Insuficiente para realizar la operación");
+public class SaldoInsuficienteException extends RuntimeException {
+    public SaldoInsuficienteException(String msg) {
+        super(msg);
     }
 }
