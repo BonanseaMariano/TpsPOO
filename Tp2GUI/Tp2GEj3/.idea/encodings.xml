@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/carlosfontela/geometria/Elipse.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/carlosfontela/geometria/Punto.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="PROJECT" charset="windows-1252" />
   </component>

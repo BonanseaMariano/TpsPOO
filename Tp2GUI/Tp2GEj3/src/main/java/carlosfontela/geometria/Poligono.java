@@ -118,10 +118,21 @@ public class Poligono extends Figura {
     @Override
     public void dibujar(Graphics g) {
         g.setColor(color);
-//        if (relleno)
-//            g.fillPolygon(contorno);
-//        else
-//            g.drawPolygon(contorno);
+        //Arreglo de coordenadas x
+        int[] x = new int[contorno.length];
+        //Arreglo de coordenadas y
+        int[] y = new int[contorno.length];
+
+        //Se separan las coordenadas x e y
+        for (int i = 0; i < contorno.length; i++) {
+            x[i] = (int) contorno[i].getX();
+            y[i] = (int) contorno[i].getY();
+        }
+
+        if (relleno)
+            g.fillPolygon(x, y, contorno.length);
+        else
+            g.drawPolygon(x, y, contorno.length);
     }
 
 }
