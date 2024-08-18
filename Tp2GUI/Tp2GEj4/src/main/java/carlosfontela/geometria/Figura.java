@@ -15,4 +15,6 @@ public abstract class Figura {
     public abstract void dibujar(Graphics g);
 
     public abstract void setColor(Color color);
+
+    public abstract Color getColor();
 }

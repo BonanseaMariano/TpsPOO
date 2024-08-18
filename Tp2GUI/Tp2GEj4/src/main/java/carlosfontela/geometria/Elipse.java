@@ -85,6 +85,11 @@ public class Elipse extends Figura {
     }
 
     @Override
+    public Color getColor() {
+        return color;
+    }
+
+    @Override
     public void dibujar(Graphics g) {
         g.setColor(color);
         if (relleno)

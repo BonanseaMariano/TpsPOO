@@ -53,4 +53,9 @@ public class FiguraCompuesta extends Figura {
         for (Figura f : componentes)
             f.setColor(color);
     }
+
+    @Override
+    public Color getColor() {
+        return color;
+    }
 }

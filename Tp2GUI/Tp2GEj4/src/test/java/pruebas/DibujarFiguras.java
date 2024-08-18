@@ -13,9 +13,7 @@ public class DibujarFiguras {
     private static final int ALTO = 800;
 
     public static void main(String[] args) {
-        JFrame frame = cargarFrame();
-        frame.add(cargarFiguras(), BorderLayout.CENTER);
-        frame.setVisible(true);
+        cargarFrame().setVisible(true);
     }
 
     public static JPanel cargarFiguras() {
@@ -51,6 +49,7 @@ public class DibujarFiguras {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(ALTO, ANCHO);
         frame.setLocationRelativeTo(null);
+        frame.add(cargarFiguras(), BorderLayout.CENTER);
         return frame;
     }
 

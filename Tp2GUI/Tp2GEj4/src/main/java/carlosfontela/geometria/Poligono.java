@@ -135,4 +135,8 @@ public class Poligono extends Figura {
             g.drawPolygon(x, y, contorno.length);
     }
 
+    @Override
+    public Color getColor() {
+        return color;
+    }
 }

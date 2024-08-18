@@ -6,7 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Tp2GEj5" />
+        <module name="Tp2GEj3" />
+        <module name="Tp2GEj4" />
       </profile>
     </annotationProcessing>
   </component>
