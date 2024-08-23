@@ -21,6 +21,14 @@ public class Materia {
         return codigo;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public List<Materia> getCorrelativas() {
+        return correlativas;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -41,10 +49,11 @@ public class Materia {
                 '}';
     }
 
-    public void agregarCorrelativa(Materia materia) throws MateriaRepetidaException {
+    public Materia agregarCorrelativa(Materia materia) throws MateriaRepetidaException {
         if (correlativas.contains(materia)) {
             throw new MateriaRepetidaException();
         }
         this.correlativas.add(materia);
+        return materia;
     }
 }

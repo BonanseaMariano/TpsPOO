@@ -22,6 +22,26 @@ public class Facultad {
         this.materias = new ArrayList<>();
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public List<Profesor> getProfesores() {
+        return profesores;
+    }
+
+    public List<Alumno> getAlumnos() {
+        return alumnos;
+    }
+
+    public List<Materia> getMaterias() {
+        return materias;
+    }
+
     @Override
     public String toString() {
         String mensaje = "\t---- Materias ----\n";
@@ -73,11 +93,8 @@ public class Facultad {
      * @return una lista de materias asociadas al profesor, o null si el profesor no se encuentra
      */
     public List<Materia> materiasPorProfesor(Profesor profesor) {
-        for (Profesor p : this.profesores) {
-            if (p.equals(profesor)) {
-                return p.getMaterias();
-            }
-        }
+        if (profesores.contains(profesor))
+            return profesor.getMaterias();
         return null;
     }
 

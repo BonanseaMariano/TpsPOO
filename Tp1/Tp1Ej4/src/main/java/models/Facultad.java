@@ -22,6 +22,26 @@ public class Facultad {
         this.materias = new ArrayList<>();
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public List<Profesor> getProfesores() {
+        return profesores;
+    }
+
+    public List<Alumno> getAlumnos() {
+        return alumnos;
+    }
+
+    public List<Materia> getMaterias() {
+        return materias;
+    }
+
     @Override
     public String toString() {
         String mensaje = "\t---- Materias ----\n";

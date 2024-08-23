@@ -20,6 +20,22 @@ public class Profesor {
         agregarMateria(materia);
     }
 
+    public int getLegajo() {
+        return legajo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public List<Materia> getMaterias() {
+        return materias;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -39,15 +55,16 @@ public class Profesor {
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'';
         for (Materia m : this.materias) {
-            mensaje += ", materia=" + m.getCodigo();
+            mensaje += m;
         }
         return mensaje + "}";
     }
 
-    public void agregarMateria(Materia materia) throws MateriaRepetidaException {
+    public Materia agregarMateria(Materia materia) throws MateriaRepetidaException {
         if (materias.contains(materia)) {
             throw new MateriaRepetidaException();
         }
         this.materias.add(materia);
+        return materia;
     }
 }
