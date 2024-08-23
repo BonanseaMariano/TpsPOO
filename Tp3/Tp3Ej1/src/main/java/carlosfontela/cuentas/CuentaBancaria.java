@@ -1,5 +1,7 @@
 package carlosfontela.cuentas;
 
+import java.util.Objects;
+
 public abstract class CuentaBancaria implements OperacionBanco {
 
     private int numero;
@@ -42,4 +44,22 @@ public abstract class CuentaBancaria implements OperacionBanco {
         return saldoDisponible();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof CuentaBancaria that)) return false;
+        return numero == that.numero;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(numero);
+    }
+
+    @Override
+    public String toString() {
+        return "numero=" + numero +
+                ", titular=" + titular +
+                ", saldo=" + saldo;
+    }
 }

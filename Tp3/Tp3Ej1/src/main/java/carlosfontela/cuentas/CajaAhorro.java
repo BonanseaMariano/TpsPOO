@@ -49,4 +49,11 @@ public class CajaAhorro extends CuentaBancaria {
     public double obtenerComision() {
         return CajaAhorro.getComisionCA();
     }
+
+    @Override
+    public String toString() {
+        return "CajaAhorro{" + super.toString() + " '" +
+                "interesesGanados=" + interesesGanados +
+                '}';
+    }
 }

@@ -48,4 +48,11 @@ public class CuentaCorriente extends CuentaBancaria {
     public double obtenerComision() {
         return CuentaCorriente.getComisionCC();
     }
+
+    @Override
+    public String toString() {
+        return "CuentaCorriente{" + super.toString() + " '" +
+                "descubierto=" + descubierto +
+                '}';
+    }
 }
