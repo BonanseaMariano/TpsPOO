@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cbcbc477-f205-420e-8d97-edd834aea6d7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/carlosfontela/algebra/BaseConjunto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/carlosfontela/algebra/Conjunto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/carlosfontela/algebra/ConjuntoArreglo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/carlosfontela/algebra/ConjuntoBits.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/carlosfontela/algebra/ConjuntoColeccion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/carlosfontela/pruebas/PruebaConjuntoColeccion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/carlosfontela/pruebas/PruebaConjuntos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/carlosfontela/pruebas/PruebaConjuntos2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/carlosfontela/pruebas/PruebaDiferenciaSimetrica.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2lAj428KiXiGB8D7hdxldmFLnPv" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.PruebaConjuntoColeccion.executor": "Run",
+    "JUnit.PruebaConjuntos.executor": "Run",
+    "JUnit.PruebaConjuntos2.executor": "Run",
+    "JUnit.PruebaDiferenciaSimetrica.executor": "Run",
+    "JUnit.carlosfontela.pruebas in Tp3Ej4.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/UNPSJB/TpsPOO/Tp3/Tp3Ej4/src/main/java/carlosfontela/pruebas",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\UNPSJB\TpsPOO\Tp3\Tp3Ej4\src\main\java\carlosfontela\pruebas" />
+      <recent name="E:\UNPSJB\TpsPOO\Tp3\Tp3Ej4\src\main\java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.PruebaDiferenciaSimetrica">
+    <configuration name="PruebaConjuntoColeccion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Tp3Ej4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="carlosfontela.pruebas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="carlosfontela.pruebas" />
+      <option name="MAIN_CLASS_NAME" value="carlosfontela.pruebas.PruebaConjuntoColeccion" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PruebaConjuntos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Tp3Ej4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="carlosfontela.pruebas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="carlosfontela.pruebas" />
+      <option name="MAIN_CLASS_NAME" value="carlosfontela.pruebas.PruebaConjuntos" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PruebaConjuntos2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Tp3Ej4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="carlosfontela.pruebas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="carlosfontela.pruebas" />
+      <option name="MAIN_CLASS_NAME" value="carlosfontela.pruebas.PruebaConjuntos2" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PruebaDiferenciaSimetrica" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Tp3Ej4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="carlosfontela.pruebas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="carlosfontela.pruebas" />
+      <option name="MAIN_CLASS_NAME" value="carlosfontela.pruebas.PruebaDiferenciaSimetrica" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="carlosfontela.pruebas in Tp3Ej4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Tp3Ej4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="carlosfontela.pruebas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="carlosfontela.pruebas" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PruebaDiferenciaSimetrica" />
+        <item itemvalue="JUnit.PruebaConjuntos2" />
+        <item itemvalue="JUnit.PruebaConjuntos" />
+        <item itemvalue="JUnit.PruebaConjuntoColeccion" />
+        <item itemvalue="JUnit.carlosfontela.pruebas in Tp3Ej4" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.419" />
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-IU-242.20224.419" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cbcbc477-f205-420e-8d97-edd834aea6d7" name="Changes" comment="" />
+      <created>1724629580926</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1724629580926</updated>
+      <workItem from="1724629581902" duration="7288000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
