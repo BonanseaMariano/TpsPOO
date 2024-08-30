@@ -1,4 +1,4 @@
-package carlosfontela.cuentas;
+package models;
 
 public class Empresa extends Cliente {
 	

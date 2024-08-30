@@ -1,4 +1,4 @@
-package carlosfontela.cuentas;
+package exceptions;
 
 public class ClienteMaxCuentasException extends RuntimeException {
     public ClienteMaxCuentasException() {

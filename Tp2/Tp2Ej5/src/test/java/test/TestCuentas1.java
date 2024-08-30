@@ -6,13 +6,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import carlosfontela.cuentas.CajaAhorro;
-import carlosfontela.cuentas.Cliente;
-import carlosfontela.cuentas.CuentaBancaria;
-import carlosfontela.cuentas.CuentaCorriente;
-import carlosfontela.cuentas.Empresa;
-import carlosfontela.cuentas.Persona;
-import carlosfontela.cuentas.SaldoInsuficienteException;
+import models.CajaAhorro;
+import models.Cliente;
+import models.CuentaBancaria;
+import models.CuentaCorriente;
+import models.Empresa;
+import models.Persona;
+import exceptions.SaldoInsuficienteException;
 
 class TestCuentas1 {
 

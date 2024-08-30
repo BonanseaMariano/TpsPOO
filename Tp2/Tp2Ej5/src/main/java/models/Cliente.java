@@ -1,4 +1,7 @@
-package carlosfontela.cuentas;
+package models;
+
+import exceptions.ClienteMaxCuentasException;
+import exceptions.SaldoInsuficienteException;
 
 public abstract class Cliente {
 
@@ -68,38 +71,38 @@ public abstract class Cliente {
     }
 
     public void pagarTarjetaCredito(double importe) {
+        //El importe supera el saldo disponible
         if (saldoDisponibleTotal() < importe) throw new SaldoInsuficienteException("Saldo: " + saldoDisponibleTotal());
 
         double importeRestante = importe;
 
-        //Primero se debita de las cajas de ahorro
-        for (int i = 0; i < getCantidadCuentas(); i++) {
+        // Primero se debita de las cajas de ahorro
+        for (int i = 0; importeRestante > 0 && i < getCantidadCuentas(); i++) {
             if (getCuentas()[i] instanceof CajaAhorro) {
                 CajaAhorro caja = (CajaAhorro) getCuentas()[i];
-                if (importeRestante >= caja.saldoDisponible()) { //El dinero de la cuenta no alcanza
+                if (importeRestante >= caja.saldoDisponible()) { // El dinero de la cuenta no alcanza
                     caja.extraer(caja.saldoDisponible());
                     importeRestante -= caja.saldoDisponible();
-                } else { //El dinero de la cuenta alcanzo
+                } else { // El dinero de la cuenta alcanza
                     caja.extraer(importeRestante);
-                    return;
+                    importeRestante = 0;
                 }
             }
         }
 
-        //Luego se debita de las cuentas corrientes
-        for (int i = 0; i < getCantidadCuentas(); i++) {
+        // Luego se debita de las cuentas corrientes
+        for (int i = 0; importeRestante > 0 && i < getCantidadCuentas(); i++) {
             if (getCuentas()[i] instanceof CuentaCorriente) {
-                CuentaCorriente caja = (CuentaCorriente) getCuentas()[i];
-                if (importeRestante >= caja.saldoDisponible()) { //El dinero de la cuenta no alcanza
-                    caja.extraer(caja.getSaldo());
-                    importeRestante -= caja.getSaldo();
-                } else { //El dinero de la cuenta alcanzo
-                    caja.extraer(importeRestante);
-                    return;
+                CuentaCorriente cuenta = (CuentaCorriente) getCuentas()[i];
+                if (importeRestante >= cuenta.saldoDisponible()) { // El dinero de la cuenta no alcanza
+                    cuenta.extraer(cuenta.getSaldo());
+                    importeRestante -= cuenta.getSaldo();
+                } else { // El dinero de la cuenta alcanza
+                    cuenta.extraer(importeRestante);
+                    importeRestante = 0;
                 }
             }
         }
-
     }
 
     private class Domicilio {

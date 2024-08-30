@@ -1,7 +1,7 @@
 package test;
 
-import carlosfontela.cuentas.*;
 import junit.framework.TestCase;
+import models.*;
 
 public class PruebaCuentas extends TestCase {
 

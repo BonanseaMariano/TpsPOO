@@ -1,4 +1,6 @@
-package carlosfontela.cuentas;
+package models;
+
+import exceptions.SaldoInsuficienteException;
 
 public abstract class CuentaBancaria {
 
