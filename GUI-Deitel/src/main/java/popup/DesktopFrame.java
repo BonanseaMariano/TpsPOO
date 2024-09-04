@@ -62,8 +62,7 @@ public class DesktopFrame extends JFrame {
 class MyJPanel extends JPanel {
     private static Random generator = new Random();
     private ImageIcon picture; // image to be displayed
-    private String[] images = {"yellowflowers.png", "purpleflowers.png",
-            "redflowers.png", "redflowers2.png", "lavenderflowers.png"};
+    private String[] images = {"yellowflowers.png", "purpleflowers.png", "redflowers.png", "redflowers2.png", "lavenderflowers.png"};
 
     // load image
     public MyJPanel() {
