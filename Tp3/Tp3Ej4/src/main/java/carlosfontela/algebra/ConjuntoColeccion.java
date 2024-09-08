@@ -45,8 +45,4 @@ public class ConjuntoColeccion extends BaseConjunto {
         return implementacion.size();
     }
 
-    @Override
-    public Conjunto diferenciaSimetrica(Conjunto b) {
-        return diferencia(b).union(b.diferencia(this));
-    }
 }

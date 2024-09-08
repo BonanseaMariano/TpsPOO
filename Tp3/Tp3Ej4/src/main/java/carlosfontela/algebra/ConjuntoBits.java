@@ -82,9 +82,4 @@ public class ConjuntoBits extends BaseConjunto {
         return unos;
     }
 
-    @Override
-    public Conjunto diferenciaSimetrica(Conjunto b) {
-        return diferencia(b).union(b.diferencia(this));
-    }
-
 }

@@ -1,7 +1,8 @@
 // Elipse.java
-package carlosfontela.geometria;
+package models;
 
 import java.awt.*;
+import java.util.Objects;
 
 public class Elipse extends Figura {
 
@@ -102,4 +103,27 @@ public class Elipse extends Figura {
                     (int) getRadioMenor(), (int) getRadioMenor());
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Elipse elipse)) return false;
+        return Double.compare(radioMayor, elipse.radioMayor) == 0 && Double.compare(radioMenor, elipse.radioMenor) == 0 && Double.compare(anguloRadioMayor, elipse.anguloRadioMayor) == 0 && relleno == elipse.relleno && Objects.equals(centro, elipse.centro) && Objects.equals(color, elipse.color);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(radioMayor, radioMenor, centro, anguloRadioMayor, relleno, color);
+    }
+
+    @Override
+    public String toString() {
+        return "Elipse{" +
+                "radioMayor=" + radioMayor +
+                ", radioMenor=" + radioMenor +
+                ", centro=" + centro +
+                ", anguloRadioMayor=" + anguloRadioMayor +
+                ", relleno=" + relleno +
+                ", color=" + color +
+                '}';
+    }
 }

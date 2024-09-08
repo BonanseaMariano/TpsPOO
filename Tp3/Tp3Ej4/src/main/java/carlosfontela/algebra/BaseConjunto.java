@@ -77,6 +77,11 @@ public abstract class BaseConjunto implements Conjunto {
     }
 
     @Override
+    public Conjunto diferenciaSimetrica(Conjunto b) {
+        return this.union(b).diferencia(this.interseccion(b));
+    }
+
+    @Override
     public String toString() {
         String s = "{";
         for (int x = 0; x < this.getBase(); x++)

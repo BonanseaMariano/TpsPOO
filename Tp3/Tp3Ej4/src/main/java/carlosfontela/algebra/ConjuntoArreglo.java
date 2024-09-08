@@ -58,9 +58,4 @@ public class ConjuntoArreglo extends BaseConjunto {
         return cantidad;
     }
 
-    @Override
-    public Conjunto diferenciaSimetrica(Conjunto b) {
-        return diferencia(b).union(b.diferencia(this));
-    }
-
 }

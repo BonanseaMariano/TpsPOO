@@ -1,4 +1,6 @@
-package carlosfontela.geometria;
+package models;
+
+import java.util.Objects;
 
 public class Segmento {
 
@@ -30,5 +32,25 @@ public class Segmento {
 	public double getAnguloX ( ) {
 			return Math.atan(
 				(extremo2.getY() - extremo1.getY()) / (extremo2.getX() - extremo1.getX()) );
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof Segmento segmento)) return false;
+        return Objects.equals(extremo1, segmento.extremo1) && Objects.equals(extremo2, segmento.extremo2);
+	}
+
+	@Override
+	public String toString() {
+		return "Segmento{" +
+				"extremo1=" + extremo1 +
+				", extremo2=" + extremo2 +
+				'}';
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(extremo1, extremo2);
 	}
 }

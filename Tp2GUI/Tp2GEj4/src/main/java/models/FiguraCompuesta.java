@@ -1,7 +1,9 @@
 // FiguraCompuesta.java
-package carlosfontela.geometria;
+package models;
 
 import java.awt.*;
+import java.util.Arrays;
+import java.util.Objects;
 
 public class FiguraCompuesta extends Figura {
 
@@ -57,5 +59,25 @@ public class FiguraCompuesta extends Figura {
     @Override
     public Color getColor() {
         return color;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof FiguraCompuesta that)) return false;
+        return Objects.deepEquals(componentes, that.componentes) && Objects.equals(color, that.color);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Arrays.hashCode(componentes), color);
+    }
+
+    @Override
+    public String toString() {
+        return "FiguraCompuesta{" +
+                "componentes=" + Arrays.toString(componentes) +
+                ", color=" + color +
+                '}';
     }
 }

@@ -1,7 +1,9 @@
 // Poligono.java
-package carlosfontela.geometria;
+package models;
 
 import java.awt.*;
+import java.util.Arrays;
+import java.util.Objects;
 
 public class Poligono extends Figura {
 
@@ -138,5 +140,26 @@ public class Poligono extends Figura {
     @Override
     public Color getColor() {
         return color;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Poligono poligono)) return false;
+        return relleno == poligono.relleno && Objects.deepEquals(contorno, poligono.contorno) && Objects.equals(color, poligono.color);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Arrays.hashCode(contorno), relleno, color);
+    }
+
+    @Override
+    public String toString() {
+        return "Poligono{" +
+                "contorno=" + Arrays.toString(contorno) +
+                ", relleno=" + relleno +
+                ", color=" + color +
+                '}';
     }
 }

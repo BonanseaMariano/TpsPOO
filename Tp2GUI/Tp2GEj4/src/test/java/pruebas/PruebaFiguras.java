@@ -1,7 +1,7 @@
 package pruebas;
 
-import carlosfontela.geometria.*;
 import junit.framework.TestCase;
+import models.*;
 
 public class PruebaFiguras extends TestCase {
 
