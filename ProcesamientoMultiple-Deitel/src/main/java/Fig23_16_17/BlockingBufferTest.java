@@ -1,4 +1,5 @@
 package Fig23_16_17;
+
 // Fig 23.17: BlockingBufferTest.java
 // Shows two threads manipulating a blocking buffer.
 
@@ -6,20 +7,19 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class BlockingBufferTest {
-    public static void main(String[] args) {
-        // create new thread pool with two threads
-        ExecutorService application = Executors.newCachedThreadPool();
+  public static void main(String[] args) {
+    // create new thread pool with two threads
+    ExecutorService application = Executors.newCachedThreadPool();
 
-        // create BlockingBuffer to store ints
-        Buffer sharedLocation = new BlockingBuffer();
+    // create BlockingBuffer to store ints
+    Buffer sharedLocation = new BlockingBuffer();
 
-        application.execute(new Producer(sharedLocation));
-        application.execute(new Consumer(sharedLocation));
+    application.execute(new Producer(sharedLocation));
+    application.execute(new Consumer(sharedLocation));
 
-        application.shutdown();
-    } // end main
+    application.shutdown();
+  } // end main
 } // end class BlockingBufferTest
-
 
 /**************************************************************************
  * (C) Copyright 1992-2007 by Deitel & Associates, Inc. and               *
