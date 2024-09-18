@@ -5,12 +5,12 @@ import javafx.stage.Stage;
 import managers.StageManager;
 
 public class Main extends Application {
-    public static void main(String[] args) {
-        launch(args);
-    }
+  public static void main(String[] args) {
+    launch(args);
+  }
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        new StageManager();
-    }
+  @Override
+  public void start(Stage primaryStage) throws Exception {
+    new StageManager();
+  }
 }
