@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbcbc477-f205-420e-8d97-edd834aea6d7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/UML/Tp3Ej4UML.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tp3Ej1/src/main/java/UML/Tp3Ej1UML.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Tp3Ej1/src/main/java/UML/Tp3Ej1UML.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/carlosfontela/UML/Tp3Ej4UML.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/carlosfontela/algebra/BaseConjunto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/carlosfontela/algebra/BaseConjunto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/carlosfontela/algebra/ConjuntoArreglo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/carlosfontela/algebra/ConjuntoArreglo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/carlosfontela/algebra/ConjuntoBits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/carlosfontela/algebra/ConjuntoBits.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/carlosfontela/algebra/ConjuntoColeccion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/carlosfontela/algebra/ConjuntoColeccion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Tp4/Tp4Ej1/src/main/java/gui/ConversionUnidadesFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Tp4/Tp4Ej1/src/main/java/gui/ConversionUnidadesPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Tp4/Tp4Ej1/src/main/java/utils/ConversionUnidades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Tp2GUI/Tp2GEj5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tp2GUI/Tp2GEj5/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +61,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/UNPSJB/TpsPOO/Tp2GUI/Tp2GEj4",
+    "last_opened_file_path": "C:/Users/Usuario/OneDrive/Documents/UNPSJB/TpsPOO/Tp3/Tp3Ej4",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -185,6 +181,7 @@
       <workItem from="1724679616152" duration="913000" />
       <workItem from="1724791405794" duration="278000" />
       <workItem from="1725750905174" duration="600000" />
+      <workItem from="1726089607283" duration="24000" />
     </task>
     <servers />
   </component>

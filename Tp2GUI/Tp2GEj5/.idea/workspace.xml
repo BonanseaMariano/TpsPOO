@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0766364-def9-4da0-88a8-be1ae16b0762" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/carlosfontela/geometria/Elipse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/carlosfontela/geometria/Figura.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/carlosfontela/geometria/FiguraCompuesta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/carlosfontela/geometria/PanelDibujo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/carlosfontela/geometria/Poligono.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/carlosfontela/geometria/Punto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/carlosfontela/geometria/Segmento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pruebas/DibujarFiguras.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pruebas/PruebaFiguras.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tp2GEj3/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tp2GEj3/.idea/encodings.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c0766364-def9-4da0-88a8-be1ae16b0762" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,21 +20,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "BonanseaMariano"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;BonanseaMariano&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:BonanseaMariano/TpsPOO.git",
-    "accountId": "1f46ede9-8090-474e-97b0-b745b46b7617"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:BonanseaMariano/TpsPOO.git&quot;,
+    &quot;accountId&quot;: &quot;1f46ede9-8090-474e-97b0-b745b46b7617&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2kl0Jy41qJCQgwHSbcNkg3Z4j51" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -71,8 +53,14 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Usuario/OneDrive/Documents/UNPSJB/TpsPOO/Tp2GUI/Tp2GEj5/src/test/java",
-    "settings.editor.selected.configurable": "configurable.group.appearance"
+    "last_opened_file_path": "C:/Users/Usuario/OneDrive/Documents/UNPSJB/TpsPOO/Tp2GUI/Tp2GEj5",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -117,6 +105,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -125,7 +121,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723842788770</updated>
+      <workItem from="1725990357856" duration="655000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
