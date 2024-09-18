@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.MainPanelController">
+    <top>
+        <MenuBar>
+            <menus>
+                <Menu text="Empresa">
+                    <MenuItem text="Carga Datos" onAction="#showCargaDatos"/>
+                </Menu>
+                <Menu text="Empleados">
+                    <MenuItem text="Tabla Empleados" onAction="#showTablaEmpleados"/>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <StackPane fx:id="contentPane"/>
+    </center>
+</BorderPane>
