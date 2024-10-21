@@ -1,6 +1,7 @@
 package models;
 
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.TimeUnit;
 
 public class CintaDeEmpaque {
     private final ArrayBlockingQueue<Producto> buffer;
@@ -15,7 +16,7 @@ public class CintaDeEmpaque {
 
     public Producto get() throws InterruptedException {
         Producto producto;
-        producto = buffer.take();
+        producto = buffer.poll(5, TimeUnit.SECONDS);
         return producto;
     }
 

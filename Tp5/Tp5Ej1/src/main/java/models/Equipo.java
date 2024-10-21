@@ -14,7 +14,7 @@ public class Equipo implements Runnable {
 
     @Override
     public void run() {
-        for (int count = 1; count <= 24; count++) {
+        for (int count = 1; count <= 6; count++) {
             try {
                 Thread.sleep(generator.nextInt(1000) + 2000); // 2 to 3 seconds
                 Producto producto = new Producto(nombre, count);
