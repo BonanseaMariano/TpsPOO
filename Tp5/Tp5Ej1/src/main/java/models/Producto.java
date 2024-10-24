@@ -1,19 +1,37 @@
 package models;
 
 public class Producto {
-    private final String equipo;
-    private final int id;
+    private String nombre;
+    private String descripcion;
 
-    public Producto(String equipo, int id) {
-        this.equipo = equipo;
-        this.id = id;
+    // Constructor
+    public Producto(String nombre, String descripcion) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
     }
 
+    // Getters
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    // Setters
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    // Método toString para imprimir el producto de forma legible
     @Override
     public String toString() {
-        return "Producto{" +
-                "equipo='" + equipo + '\'' +
-                ", id=" + id +
-                '}';
+        return "Producto: " + nombre + " | Descripción: " + descripcion;
     }
 }
+
