@@ -21,7 +21,7 @@ public class Simulacion {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("Simulación terminada.");
         aplicacion.shutdown();
+        System.out.println("Simulación terminada.");
     }
 }
