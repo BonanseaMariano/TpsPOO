@@ -1,27 +1,25 @@
 package models;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ArrayBlockingQueue;
 
 public class ColaImpresion {
-    private Queue<Documento> cola = new LinkedList<>();
-    private final int MAX_CAPACITY = 5;
+    private final BlockingQueue<Documento> colaImpresion;
 
-    public synchronized void encolarDocumento(Documento doc) throws InterruptedException {
-        while (cola.size() == MAX_CAPACITY) {
-            wait();
-        }
-        cola.add(doc);
-        System.out.println("Documento encolado: " + doc.getNombre());
-        notifyAll();
+    public ColaImpresion(int capacidad) {
+        // La cola tiene una capacidad fija para 5 documentos
+        this.colaImpresion = new ArrayBlockingQueue<>(capacidad);
     }
 
-    public synchronized Documento obtenerDocumento() throws InterruptedException {
-        while (cola.isEmpty()) {
-            wait();
-        }
-        Documento doc = cola.poll();
-        notifyAll();
-        return doc;
+    // Método para agregar un documento a la cola
+    public void agregarDocumento(Documento documento) throws InterruptedException {
+        colaImpresion.put(documento);
+        System.out.println(documento + " agregado a la cola de impresión.");
+    }
+
+    // Método para retirar un documento de la cola
+    public Documento retirarDocumento() throws InterruptedException {
+        return colaImpresion.take();
     }
 }
+
