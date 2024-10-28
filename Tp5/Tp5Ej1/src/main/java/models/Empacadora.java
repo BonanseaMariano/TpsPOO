@@ -1,35 +1,29 @@
 package models;
 
+import java.util.concurrent.CountDownLatch;
+
 public class Empacadora implements Runnable {
     private final CintaEmpaque cintaEmpaque;
-    private final int numEquipos; // Número de equipos productores
-    private int equiposFinalizados = 0;
+    private final CountDownLatch latch;
 
-    public Empacadora(CintaEmpaque cintaEmpaque, int numEquipos) {
+    public Empacadora(CintaEmpaque cintaEmpaque, CountDownLatch latch) {
         this.cintaEmpaque = cintaEmpaque;
-        this.numEquipos = numEquipos;
+        this.latch = latch;
     }
 
     @Override
     public void run() {
         try {
-            while (equiposFinalizados < numEquipos) { // Empacadora sigue trabajando hasta que todos los equipos terminen
+            while (latch.getCount() > 0) {
                 Producto producto = cintaEmpaque.retirarProducto(); // Usar método de la clase CintaEmpaque
-
-                if (producto.getNombre().equals("FIN")) {
-                    equiposFinalizados++; // Un equipo ha terminado
-                    System.out.println("Un equipo ha terminado. Equipos finalizados: " + equiposFinalizados);
-                } else {
-                    // Empacar el producto
-                    System.out.println("Empacadora empacó " + producto);
-                    Thread.sleep(1000); // Empacar un producto cada segundo
-                }
+                // Empacar el producto
+                System.out.println("Empacadora empacó " + producto);
+                Thread.sleep(1000); // Empacar un producto cada segundo
             }
-
+            latch.await(); // Esperar a que todos los equipos terminen
             System.out.println("Todos los equipos han finalizado. Empacadora se detiene.");
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
     }
 }
-
