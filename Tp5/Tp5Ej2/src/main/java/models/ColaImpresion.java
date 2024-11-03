@@ -1,25 +1,20 @@
 package models;
 
 import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.TimeUnit;
 
 public class ColaImpresion {
-    private final BlockingQueue<Documento> colaImpresion;
+    private final int MAX_SIZE = 5;
+    private final BlockingQueue<Documento> cola = new LinkedBlockingQueue<>(MAX_SIZE);
 
-    public ColaImpresion(int capacidad) {
-        // La cola tiene una capacidad fija para 5 documentos
-        this.colaImpresion = new ArrayBlockingQueue<>(capacidad);
-    }
-
-    // Método para agregar un documento a la cola
     public void agregarDocumento(Documento documento) throws InterruptedException {
-        colaImpresion.put(documento);
-        System.out.println(documento + " agregado a la cola de impresión.");
+        cola.put(documento);
+        System.out.println("Documento agregado a la cola: " + documento.getNombre() + " con " + documento.getPaginas() + " páginas y " + documento.getCopias() + " copias.");
     }
 
-    // Método para retirar un documento de la cola
-    public Documento retirarDocumento() throws InterruptedException {
-        return colaImpresion.take();
+    public Documento obtenerDocumento() throws InterruptedException {
+        return cola.poll(5, TimeUnit.SECONDS); // Espera 5 segundos para obtener un documento
     }
+
 }
-

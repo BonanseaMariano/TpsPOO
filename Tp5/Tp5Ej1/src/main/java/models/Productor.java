@@ -1,14 +1,17 @@
 package models;
 
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Productor implements Runnable {
     private final String nombreEquipo;
     private final CintaEmpaque cintaEmpaque;
+    private final CountDownLatch latch;
 
-    public Productor(String nombreEquipo, CintaEmpaque cintaEmpaque) {
+    public Productor(String nombreEquipo, CintaEmpaque cintaEmpaque, CountDownLatch latch) {
         this.nombreEquipo = nombreEquipo;
         this.cintaEmpaque = cintaEmpaque;
+        this.latch = latch;
     }
 
     @Override
@@ -27,16 +30,11 @@ public class Productor implements Runnable {
                 );
 
                 cintaEmpaque.agregarProducto(producto); // Usar el método de la clase CintaEmpaque
+                System.out.println(nombreEquipo + " produjo " + producto);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
         }
-
-        // Señal de que el equipo ha terminado de producir
-        try {
-            cintaEmpaque.agregarProducto(new Producto("FIN", "")); // Usamos producto FIN como señal de fin
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
+        latch.countDown(); // Señal de que el equipo ha terminado de producir
     }
 }
