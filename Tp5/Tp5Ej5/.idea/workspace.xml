@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="733bfaf5-17ad-4249-8c09-4eb5ccb5a2c7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Tp5Ej2/src/main/java/app/Simulacion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tp5Ej2/src/main/java/models/ColaImpresion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tp5Ej2/src/main/java/models/Documento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tp5Ej2/src/main/java/models/Impresora.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tp5Ej3/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tp5Ej3/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tp5Ej3/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tp5Ej3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tp5Ej3/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tp5Ej3/src/main/java/main/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tp5Ej3/src/main/java/models/ReadWriteLock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tp5Ej4/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tp5Ej4/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tp5Ej4/src/main/java/app/SimulacionPeluqueria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tp5Ej4/src/main/java/models/Cliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tp5Ej4/src/main/java/models/Peluqueria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tp5Ej4/src/main/java/models/Peluquero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/Heladeria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/Cliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/EmpleadoAtencion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/EmpleadoCaja.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tp5Ej6/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tp5Ej6/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "BonanseaMariano"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:BonanseaMariano/TpsPOO.git",
+    "accountId": "1f46ede9-8090-474e-97b0-b745b46b7617"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2mlZRvZPz4wteQff1jhiLJrHK5E" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Heladeria.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Heladeria" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.Heladeria" />
+      <module name="Tp5Ej5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Heladeria" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="733bfaf5-17ad-4249-8c09-4eb5ccb5a2c7" name="Changes" comment="" />
+      <created>1727653120682</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727653120682</updated>
+      <workItem from="1727653121556" duration="783000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
