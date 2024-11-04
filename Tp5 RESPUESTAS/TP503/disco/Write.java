@@ -1,7 +1,7 @@
 package disco;
 
 import java.util.Random;
-
+// Hilo escritor
 public class Write implements Runnable {
 
 	private ReadWriteLock rwl;
@@ -17,13 +17,14 @@ public class Write implements Runnable {
 
 	@Override
 	public void run() {
+		// Simula un tiempo de escritura
 		Random random = new Random();
 		try {
-			rwl.lockWrite();
+			rwl.lockWrite(); // Bloquea la escritura
 			System.out.println("Comienza escritura: " + nro);
-			Thread.sleep(random.nextInt(MAX - MIN + 1) + MIN);
+			Thread.sleep(random.nextInt(MAX - MIN + 1) + MIN); // Simula un tiempo de escritura
 			System.out.println("Finaliza escritura: " + nro);
-			rwl.unlockWrite();
+			rwl.unlockWrite(); // Desbloquea la escritura
 		} catch (InterruptedException excepcion) {
 
 		}

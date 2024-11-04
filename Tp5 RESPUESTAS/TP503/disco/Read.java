@@ -17,13 +17,14 @@ public class Read implements Runnable {
 
 	@Override
 	public void run() {
+		// Simula un tiempo de lectura
 		Random random = new Random();
 		try {
-			rwl.lockRead();
+			rwl.lockRead(); // Bloquea la lectura
 			System.out.println("Comienza lectura: " + nro);
-			Thread.sleep(random.nextInt(MAX - MIN + 1) + MIN);
+			Thread.sleep(random.nextInt(MAX - MIN + 1) + MIN); // Simula un tiempo de lectura
 			System.out.println("Finaliza lectura: " + nro);
-			rwl.unlockRead();
+			rwl.unlockRead(); // Desbloquea la lectura
 		} catch (InterruptedException excepcion) {
 
 		}
