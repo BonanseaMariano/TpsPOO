@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+// Buffer que representa la peluquería
 public class Bshop {
     private int nchair;
     private List<Customer> listCustomer;
