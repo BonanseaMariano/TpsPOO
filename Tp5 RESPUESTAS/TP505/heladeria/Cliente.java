@@ -1,4 +1,5 @@
 package heladeria;
+
 public class Cliente {
 
 	private int id;
