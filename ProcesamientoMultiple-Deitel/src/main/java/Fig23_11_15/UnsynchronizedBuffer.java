@@ -1,24 +1,23 @@
 package Fig23_11_15;
 
 // Fig. Fig. 23.14: UnsynchronizedBuffer.java
-// UnsynchronizedBuffer maintains the shared integer that is accessed by 
+// UnsynchronizedBuffer maintains the shared integer that is accessed by
 // a producer thread and a consumer thread via methods set and get.
 public class UnsynchronizedBuffer implements Buffer {
-    private int buffer = -1; // shared by producer and consumer threads
+  private int buffer = -1; // shared by producer and consumer threads
 
-    // place value into buffer
-    public void set(int value) throws InterruptedException {
-        System.out.printf("Producer writes\t%2d", value);
-        buffer = value;
-    } // end method set
+  // place value into buffer
+  public void set(int value) throws InterruptedException {
+    System.out.printf("Producer writes\t%2d", value);
+    buffer = value;
+  } // end method set
 
-    // return value from buffer
-    public int get() throws InterruptedException {
-        System.out.printf("Consumer reads\t%2d", buffer);
-        return buffer;
-    } // end method get
+  // return value from buffer
+  public int get() throws InterruptedException {
+    System.out.printf("Consumer reads\t%2d", buffer);
+    return buffer;
+  } // end method get
 } // end class UnsynchronizedBuffer
-
 
 /**************************************************************************
  * (C) Copyright 1992-2007 by Deitel & Associates, Inc. and               *
